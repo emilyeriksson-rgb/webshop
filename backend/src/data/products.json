@@ -1,12 +1,14 @@
 [
   {
-    "id": 1,
     "name": "Laptop",
     "price": 9999
   },
   {
-    "id": 2,
     "name": "Mus",
     "price": 299
+  },
+  {
+    "name": "Tangentbord",
+    "price": 799
   }
 ]
