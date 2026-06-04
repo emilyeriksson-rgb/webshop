@@ -1,22 +1,24 @@
-import fs from "node:fs";
-import path from "node:path";
+import { Router } from "express";
 
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-}
+const router = Router();
 
-const filePath = path.join(
-  process.cwd(),
-  "backend",
-  "src",
-  "data",
-  "products.json"
-);
+const products = [
+    {
+        id: 1,
+        name: "Laptop",
+        price: 9999
+    },
+    {
+        id: 2,
+        name: "Mus",
+        price: 299
+    }
+];
 
-export function getProducts(): Product[] {
-  const data = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(data);
+router.get("/", (req, res) => {
+    res.json(products);
+});
+
+export function getProducts() {
+  return products;
 }
